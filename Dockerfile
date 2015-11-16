@@ -6,10 +6,10 @@ RUN  apt-get update \
   && rm -rf /var/lib/apt/lists/*
 
 RUN wget --no-check-certificate https://s3-us-west-2.amazonaws.com/amrutacd/Football.zip
-RUN cp ./Football.zip /usr/local/tomcat/webapps/ROOT/
+RUN cp ./Football.zip /usr/local/tomcat/webapps/
 
-RUN cd /usr/local/tomcat/webapps/ROOT/
+RUN cd /usr/local/tomcat/webapps/
 RUN apt-get update
-RUN unzip /usr/local/tomcat/webapps/ROOT/Football.zip
+RUN unzip Football.zip
 
 CMD ["catalina.sh", "run"]
